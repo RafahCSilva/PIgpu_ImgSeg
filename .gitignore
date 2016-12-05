@@ -4,3 +4,6 @@
 *.ptx
 *.cubin
 *.fatbin
+*.o
+*.exe
+\ImgSeg_cpu\saida.pbm

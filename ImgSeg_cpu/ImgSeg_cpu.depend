@@ -1,0 +1,161 @@
+# depslib dependency file v1.0
+1480881062 source:c:\_progs\imgseg_cpu\main.cpp
+	<iostream>
+	<string>
+	"PGM.h"
+
+1480881242 c:\_progs\imgseg_cpu\include\pgm.h
+	<iostream>
+	<string>
+
+1480881594 source:c:\_progs\imgseg_cpu\src\pgm.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"PGM.h"
+
+1480905606 source:c:\_progs\_pigpu\imgseg_cpu\src\pgm.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"PGM.h"
+
+1480905582 c:\_progs\_pigpu\imgseg_cpu\include\pgm.h
+	<iostream>
+	<string>
+
+1480909064 source:c:\_progs\_pigpu\imgseg_cpu\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<math.h>
+	"PGM.h"
+	"FUNCAO.h"
+
+1480892144 source:c:\_progs\_pigpu\imgseg_cpu\td.cpp
+	<iostream>
+	<stdio.h>
+	<float.h>
+	<math.h>
+	<stdlib.h>
+	"PGM.h"
+
+1480892144 c:\_progs\_pigpu\imgseg_cpu\td.cpp
+	<iostream>
+	<stdio.h>
+	<float.h>
+	<math.h>
+	<stdlib.h>
+	"PGM.h"
+
+1480898882 c:\_progs\_pigpu\imgseg_cpu\src\td.cpp
+	<iostream>
+	<stdio.h>
+	<float.h>
+	<math.h>
+	<stdlib.h>
+	"PGM.h"
+	"UnionFind.h"
+
+1480898433 c:\_progs\_pigpu\imgseg_cpu\include\unionfind.h
+	"PGM.h"
+
+1480898882 source:c:\_progs\_pigpu\imgseg_cpu\src\td.cpp
+	<iostream>
+	<stdio.h>
+	<float.h>
+	<math.h>
+	<stdlib.h>
+	"PGM.h"
+	"UnionFind.h"
+
+1480898452 source:c:\_progs\_pigpu\imgseg_cpu\src\unionfind.cpp
+	<iostream>
+	"UnionFind.h"
+	"PGM.h"
+
+1480905228 source:c:\_progs\_pigpu\imgseg_cpu\src\funcao.cpp
+	<iostream>
+	<map>
+	"FUNCAO.h"
+	"PGM.h"
+	"UnionFind.h"
+
+1480903432 c:\_progs\_pigpu\imgseg_cpu\include\funcao.h
+	"PGM.h"
+
+1480976952 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\funcao.cpp
+	<iostream>
+	<map>
+	"FUNCAO.h"
+	"PGM.h"
+	"UnionFind.h"
+
+1480903432 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\funcao.h
+	"PGM.h"
+
+1480976981 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\pgm.h
+	<iostream>
+	<string>
+
+1480978279 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\unionfind.h
+	"PBM.h"
+
+1480898452 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\unionfind.cpp
+	<iostream>
+	"UnionFind.h"
+	"PGM.h"
+
+1480976874 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\pgm.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"PGM.h"
+
+1480972465 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\tictoc.cpp
+	<iostream>
+	<stack>
+	<ctime>
+
+1480978208 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<math.h>
+	<stack>
+	<ctime>
+	"PBM.h"
+	"PICPU.h"
+	"TEMPO.h"
+
+1480973714 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\tempo.cpp
+	<iostream>
+	"TEMPO.h"
+
+1480976389 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\tempo.h
+	<iostream>
+	<stack>
+	<ctime>
+
+1480978244 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\picpu.cpp
+	<iostream>
+	<map>
+	"PICPU.h"
+	"PBM.h"
+	"UnionFind.h"
+
+1480978229 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\picpu.h
+	"PBM.h"
+
+1480978167 c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\include\pbm.h
+	<iostream>
+	<string>
+
+1480978109 source:c:\_progs\_pigpu\pigpu_imgseg\imgseg_cpu\src\pbm.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"PBM.h"
+
