@@ -43,7 +43,6 @@ public:
   int  MAX();
 
   static bool imgIGUAL(PBM* A, PBM* B);
-  static PBM* gerador1100();
 
 protected:
 private:
@@ -195,24 +194,6 @@ int PBM::MAX() {
       if( m < this->get(i, j) )
         m = this->get(i, j);
   return m;
-}
-
-void circulo(PBM* img, int x, int y, int raio) {
-  for( int i = x - raio; i < x + raio; i++ )
-    for( int j = y - raio; j < y + raio; j++ )
-      if( (pow(i - x, 2) + pow(j - y, 2)) <= pow(raio, 2) )
-        img->set(i, j, 1);
-}
-
-PBM* PBM::gerador1100() {
-  int tam = 1100;
-  PBM* out = new PBM();
-  out->zerado( tam, tam);
-  for( int x = 250; x < tam - 150; x += 200 )
-    for( int y = 250; y < tam - 150; y += 200 )
-      circulo(out, x, y, 110);
-  out->saveAsP1("gerador1100.pbm");
-  return out;
 }
 
 #endif // PBM_H

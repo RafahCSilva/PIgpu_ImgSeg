@@ -1,7 +1,7 @@
 #!/bin/bash
 
-./cpu imgs/ex1.pbm imgs/saida_cpu1.pbm -vv
-./cpu imgs/moedas_x1100.pbm imgs/saida_cpu2.pbm -v
+./cpu teste/ex1.pbm teste/cpu1_saida.pbm -vv
+./cpu teste/moedas_x1100.pbm teste/cpu2_saida.pbm -v
 
-./omp imgs/ex1.pbm imgs/saida_omp1.pbm -vv
-./omp imgs/moedas_x1100.pbm imgs/saida_omp2.pbm -v
+./omp teste/ex1.pbm teste/omp1_saida.pbm -vv
+./omp teste/moedas_x1100.pbm teste/omp2_saida.pbm -v

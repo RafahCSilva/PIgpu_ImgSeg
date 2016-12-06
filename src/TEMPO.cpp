@@ -21,4 +21,10 @@ void TEMPO_toc() {
   tictoc_stack.pop();
 }
 
+double TEMPO_toc_bench() {
+  double t = ((double)(clock() - tictoc_stack.top())) / CLOCKS_PER_SEC;
+  tictoc_stack.pop();
+  return t * 1000;
+}
+
 #endif // TEMPO_H

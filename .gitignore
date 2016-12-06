@@ -1,9 +1,4 @@
-*.i
-*.ii
-*.gpu
-*.ptx
-*.cubin
-*.fatbin
 *.o
 *.exe
-\ImgSeg_cpu\saida.pbm
+*.out
+*saida.pbm
