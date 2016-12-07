@@ -1,8 +1,8 @@
 #!/bin/bash
 
-g++ src/main_gerador.cpp -o gerador
-g++ src/main_cpu.cpp -o cpu
-g++ src/main_omp.cpp -fopenmp -o omp
+g++ src/main_gerador.cpp -o gerador -std=c++11
+g++ src/main_cpu.cpp -o cpu -std=c++11
+g++ src/main_omp.cpp -fopenmp -o omp -std=c++11
 
 
 ./gerador 2 imgs/moedas_2.pbm

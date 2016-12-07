@@ -8,8 +8,6 @@
 #include <string>
 #include <stdlib.h>
 #include <math.h>
-#include <stack>
-#include <ctime>
 #include <omp.h>
 #include "PBM.cpp"
 #include "PIOMP.cpp"

@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <cstring>
-#include <stack>
-#include <ctime>
 #include "PBM.cpp"
 #include "PICPU.cpp"
 #include "TEMPO.cpp"
@@ -69,7 +67,7 @@ int main(int argc, char const *argv[]) {
   if(bench)       TEMPO_tic();
   PBM* img2 = PICPU::TD2D(img1);
   if(bench)       tempo += TEMPO_toc_bench();
-  if(verbose1)       TEMPO_toc();
+  if(verbose1)    TEMPO_toc();
   if(verbose2)    img2->print();
 
   if(verbose1)    cout << "\nCORTE ( abaixo de ";

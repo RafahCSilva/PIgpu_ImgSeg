@@ -95,7 +95,7 @@ void PBM::loadAsP1(const char * arquivo) {
     exit(1);
   }
 
-  fscanf(arq, "%s", &p1);
+  fscanf(arq, "%s", p1);
   fscanf(arq, "%ud", &this->width);
   fscanf(arq, "%ud", &this->height);
 

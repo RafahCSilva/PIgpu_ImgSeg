@@ -3,28 +3,39 @@
 
 #include <iostream>
 #include <stack>
+#include <chrono>
 #include <ctime>
 
 using namespace std;
 
-static stack<clock_t> tictoc_stack;
+static stack<std::chrono::time_point<std::chrono::high_resolution_clock> > tictoc_stack;
 
 void TEMPO_tic() {
-  tictoc_stack.push(clock());
+  tictoc_stack.push(std::chrono::high_resolution_clock::now());
 }
 
 void TEMPO_toc() {
+  std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+  start = tictoc_stack.top();
+  end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed_seconds = end-start;
+  double t =  elapsed_seconds.count();
+
   cout << "Tempo decorrido: "
-       << ((double)(clock() - tictoc_stack.top())) / CLOCKS_PER_SEC
+       << t
        << " s"
        << endl;
   tictoc_stack.pop();
 }
 
 double TEMPO_toc_bench() {
-  double t = ((double)(clock() - tictoc_stack.top())) / CLOCKS_PER_SEC;
-  tictoc_stack.pop();
-  return t * 1000;
+  std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+  start = tictoc_stack.top();
+  end = std::chrono::high_resolution_clock::now();
+
+  std::chrono::duration<double> elapsed_seconds = end-start;
+  double t =  elapsed_seconds.count();
+  return t;
 }
 
 #endif // TEMPO_H
