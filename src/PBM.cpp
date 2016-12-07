@@ -4,7 +4,6 @@
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 using namespace std;
 
@@ -95,9 +94,9 @@ void PBM::loadAsP1(const char * arquivo) {
     exit(1);
   }
 
-  fscanf(arq, "%s", p1);
-  fscanf(arq, "%ud", &this->width);
-  fscanf(arq, "%ud", &this->height);
+  fscanf(arq, "%s", &p1);
+  fscanf(arq, "%d", &this->width);
+  fscanf(arq, "%d", &this->height);
 
   this->mat = new int*[this->height];
   for(i = 0; i < this->height; i++)
@@ -105,7 +104,7 @@ void PBM::loadAsP1(const char * arquivo) {
 
   for(i = 0; i < this->height; i++) {
     for(j = 0; j < this->width; j++) {
-      fscanf(arq, "%ud", &this->mat[i][j]);
+      fscanf(arq, "%d", &this->mat[i][j]);
     }
   }
   fclose(arq);

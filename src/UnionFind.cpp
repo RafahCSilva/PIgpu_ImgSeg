@@ -2,6 +2,7 @@
 #define UNIONFIND_H
 #include <iostream>
 #include "PBM.cpp"
+#include "PBM1d.cpp"
 
 using namespace std;
 
@@ -10,6 +11,7 @@ public:
   UnionFind();
   virtual ~UnionFind();
   void init(PBM* img);
+  void init1d(PBM1d* img);
   int FIND( int el );
   void MERGE( int A, int B );
   void flat();
@@ -42,6 +44,24 @@ void UnionFind::init(PBM* img) {
       } else {
         this->conj[i * HEIGTH + j] = i * HEIGTH + j;
       }
+    }
+  }
+}
+
+void UnionFind::init1d(PBM1d* img) {
+  int i, j;
+  int HEIGTH = img->getHeight();
+  int WIDTH = img->getWidth();
+
+  int tamanho = img->getTam();
+  this-> tam = tamanho;
+
+  this->conj = new int[tamanho];
+  for( i = 0; i < tamanho ; i++ ) {
+    if(img->get1(i) == 0) {
+      this->conj[i] = 0;
+    } else {
+      this->conj[i] = i;
     }
   }
 }
