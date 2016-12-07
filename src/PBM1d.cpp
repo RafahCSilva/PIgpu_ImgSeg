@@ -41,6 +41,7 @@ public:
   int  get2(int i, int j);
   void set2(int i, int j, int v);
   void saveAsP1(const  char * arquivo);
+  void saveAsP1_(const  char * arquivo);
   void loadAsP1(const  char * arquivo);
   void print();
   void deleteIMG();
@@ -95,8 +96,28 @@ void PBM1d::saveAsP1(const char * arquivo) {
   fclose(arq);
 }
 
-void PBM1d::loadAsP1(const char * arquivo) {
+void PBM1d::saveAsP1_(const char * arquivo) {
   int i, j;
+  FILE *arq = fopen(arquivo, "w");
+
+  if(arq == NULL) {
+    cerr << "Nao foi possivel salvar o arquivo: " << arquivo << endl;
+    exit(1);
+  }
+
+  fprintf(arq, "P1 \n");
+  fprintf(arq, "%d\n%d \n", this->width, this->height);
+  for(i = 0; i < this->height; i++) {
+    for(j = 0; j < this->width; j++) {
+      fprintf(arq, "%d ", this->get2(i, j));
+    }
+    fprintf(arq, "\n");
+  }
+  fclose(arq);
+}
+
+void PBM1d::loadAsP1(const char * arquivo) {
+  int i;
   char* p1;
   FILE *arq = fopen(arquivo, "r");
 
@@ -132,7 +153,7 @@ void PBM1d::print() {
 
   for(i = 0; i < this->height; i++) {
     for(j = 0; j < this->width; j++) {
-      cout << this->get2(i,j) << ' ';
+      cout << this->get2(i, j) << ' ';
     }
     cout << endl;
   }

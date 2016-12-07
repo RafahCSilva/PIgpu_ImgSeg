@@ -3,6 +3,7 @@
 g++ src/main_gerador.cpp -o gerador.exe -std=c++11
 g++ src/main_cpu.cpp -o cpu.exe -std=c++11
 g++ src/main_omp.cpp -fopenmp -o omp.exe -std=c++11
+nvcc main_cuda.cu -o cuda.exe -std=c++11
 
 
 gerador.exe 2 imgs/moedas_2.pbm
@@ -68,3 +69,25 @@ omp.exe imgs/moedas_17.pbm imgs/moedas_17_saida_omp.pbm -bench
 omp.exe imgs/moedas_18.pbm imgs/moedas_18_saida_omp.pbm -bench
 omp.exe imgs/moedas_19.pbm imgs/moedas_19_saida_omp.pbm -bench
 omp.exe imgs/moedas_20.pbm imgs/moedas_20_saida_omp.pbm -bench
+
+echo.
+echo cuda
+./cuda.exe imgs/moedas_2.pbm imgs/moedas_2_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_3.pbm imgs/moedas_3_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_4.pbm imgs/moedas_4_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_5.pbm imgs/moedas_5_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_6.pbm imgs/moedas_6_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_7.pbm imgs/moedas_7_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_8.pbm imgs/moedas_8_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_9.pbm imgs/moedas_9_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_10.pbm imgs/moedas_10_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_11.pbm imgs/moedas_11_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_12.pbm imgs/moedas_12_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_13.pbm imgs/moedas_13_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_14.pbm imgs/moedas_14_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_15.pbm imgs/moedas_15_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_16.pbm imgs/moedas_16_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_17.pbm imgs/moedas_17_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_18.pbm imgs/moedas_18_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_19.pbm imgs/moedas_19_saida_cuda.pbm -bench
+./cuda.exe imgs/moedas_20.pbm imgs/moedas_20_saida_cuda.pbm -bench

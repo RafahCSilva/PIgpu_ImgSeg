@@ -10,7 +10,7 @@
 #include <math.h>
 #include <cstring>
 #include "PBM1d.cpp"
-#include "PICUDA.cpp"
+#include "PICUDA.cu"
 #include "TEMPO.cpp"
 
 using namespace std;
@@ -70,8 +70,10 @@ int main(int argc, char const *argv[]) {
   if(verbose1)    TEMPO_toc();
   if(verbose2)    img2->print();
 
+  img2->saveAsP1_("TD2.pbm");
+
   if(verbose1)    cout << "\nCORTE ( abaixo de ";
-  int corte = ceil( img2->MAX() * 0.6 );
+  int corte = ceil( img2->MAX() );
   if(verbose1)    cout << corte << " )\n";
   if(verbose1)    TEMPO_tic();
   if(bench)       TEMPO_tic();

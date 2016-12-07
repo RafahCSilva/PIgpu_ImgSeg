@@ -30,55 +30,6 @@ PICUDA::~PICUDA() {
   //dtor
 }
 
-/// TRANSFORMADA DA DISTANCIA em 2D
-PBM1d* PICUDA::TD2D(PBM1d* img) {
-  int i, j;
-  int HEIGTH = img->getHeight();
-  int WIDTH = img->getWidth();
-
-  PBM1d* in = new PBM1d();
-  in->copyOf(img);
-  PBM1d* out = new PBM1d();
-  out->zerado( HEIGTH, WIDTH);
-
-  int ALTO = HEIGTH * WIDTH;
-  for(i = 0; i < ALTO; i++) {
-    in->set1(i, in->get1(i)*ALTO);
-  }
-//  cout << "oi\n";
-
-  while( true ) {
-    // para cada pixel
-    for(i = 0; i < HEIGTH; i++) {
-      for(j = 0; j < WIDTH; j++) {
-        // se ele eh zero
-        if( in->get2(i, j) == 0 ) {
-          out->set2(i, j, 0);
-        } else {
-          int m = in->get2(i, j);//FLT_MAX;
-          // pega o menor numa mascara 3x3
-          for( int k = -1; k <= 1; k++ ) {
-            for( int l = -1; l <= 1; l++ ) {
-              // evita a borda
-              if( ( 0 <= i + k ) && ( i + k < HEIGTH ) && ( 0 <= j + l ) && ( j + l < WIDTH ) ) {
-                // se eh menor, entao armazeza
-                m = min( m, (int)in->get2(i + k, j + l) + 1 );
-              }
-            }
-          }
-          // salva a menor distancia para aquele pixel
-          out->set2(i, j, m);
-        }
-      }
-    }
-    if( PBM1d::imgIGUAL(in, out) ) break;
-    in->copyOf(out);
-  }
-  in->deleteIMG();
-  delete in;
-  return out;
-}
-
 /// CORTE DA CURVA DE NIVEL
 PBM1d* PICUDA::CORTE (PBM1d* img, int corte) {
   int i, j;
@@ -270,4 +221,5 @@ PBM1d* PICUDA::GETBORDA(PBM1d* img) {
   return out;
 }
 
+#include "PICUDA_TD.cu"
 #endif // PICUDA_H

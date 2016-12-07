@@ -49,7 +49,7 @@ void UnionFind::init(PBM* img) {
 }
 
 void UnionFind::init1d(PBM1d* img) {
-  int i, j;
+  int i;
   int HEIGTH = img->getHeight();
   int WIDTH = img->getWidth();
 
