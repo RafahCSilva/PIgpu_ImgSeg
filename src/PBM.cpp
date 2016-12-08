@@ -1,3 +1,10 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe de apoia a leitura, escrita e manipulacao
+        dos dados de uma imagem .PBM em um matriz 2D
+ */
 #ifndef PBM_H
 #define PBM_H
 #include <iostream>

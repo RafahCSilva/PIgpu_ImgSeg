@@ -1,3 +1,10 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Implementacao da Transformada de Distancia em GPU
+        com CUDA (utilizando a Global e a Shared Memory)
+ */
 #include <iostream>
 #include <stdio.h>
 #include <cstring>
@@ -5,6 +12,7 @@
 #include <cuda.h>
 #include "PBM1d.cpp"
 #include "PICUDA.cu"
+#include "TEMPO.cpp"
 
 #define BLOCK_SIZE 16
 #define RAIO 1
@@ -18,7 +26,6 @@ __global__ void vet_td_gpu_s_kernel(int* IN, int* OUT);
 
 
 void PICUDA::TD2D_multGPU(PBM1d* img) {
-  PBM1d* out;
 
   // Nas duas gpu
   int devicesCount, deviceIndex;
@@ -30,19 +37,22 @@ void PICUDA::TD2D_multGPU(PBM1d* img) {
     printf("%s \n", deviceProperties.name );
 
     // GPU global memory
+    cout << "  GLOBAL = ";
     TEMPO_tic();
-    PBM1d* imgG = PICUDA::TD2D_GLOBAL(img1);
+    PBM1d* imgG = PICUDA::TD2D_GLOBAL(img);
     TEMPO_toc_TD();
-    cout << " ";
+    cout << endl;
     delete imgG;
 
     // GPU shared memory
+    cout << "  SHARED = ";
     TEMPO_tic();
-    PBM1d* imgS = PICUDA::TD2D_SHARED(img1);
+    PBM1d* imgS = PICUDA::TD2D_SHARED(img);
     TEMPO_toc_TD();
     cout << endl;
     delete imgS;
   }
+  cout << endl;
 
 }
 
@@ -138,8 +148,8 @@ __global__ void vet_td_gpu_g_kernel(int* IN, int* OUT) {
       menor = min(menor, IN[id + vizinho]);
 
     // Salva o menor + 1
-    if(menor >= IN[Lid] ) { // (sem estourar o limite, no cazo de dimensao grande)
-      OUT[id] = IN[Lid];
+    if(menor >= IN[id] ) { // (sem estourar o limite, no cazo de dimensao grande)
+      OUT[id] = IN[id];
     } else {
       OUT[id] = menor + 1;
     }

@@ -1,3 +1,9 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe da estrutura de dados UnionFind
+ */
 #ifndef UNIONFIND_H
 #define UNIONFIND_H
 #include <iostream>

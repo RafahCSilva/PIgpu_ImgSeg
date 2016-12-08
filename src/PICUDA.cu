@@ -1,3 +1,9 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe de funcoes para manipular imagem em GPU com CUDA
+ */
 #ifndef PICUDA_H
 #define PICUDA_H
 #include <iostream>

@@ -1,3 +1,9 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe de funcoes para manipular imagem em CPU
+ */
 #ifndef PICPU_H
 #define PICPU_H
 #include <iostream>

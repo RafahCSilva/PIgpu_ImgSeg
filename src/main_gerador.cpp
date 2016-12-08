@@ -2,7 +2,7 @@
   Processamento de Imagens na GPU
     Rafael Cardoso da Silva    21048012
       Segmentacao de Imagem com o Algoritmo de Watershed
-      Gerador de Imagens
+        Gerador de Imagens
  */
 #include <iostream>
 #include <stdlib.h>

@@ -2,7 +2,7 @@
   Processamento de Imagens na GPU
     Rafael Cardoso da Silva    21048012
       Segmentacao de Imagem com o Algoritmo de Watershed
-      Versao em CPU com OpenMP
+        Versao em CPU com OpenMP
  */
 #include <iostream>
 #include <string>

@@ -1,3 +1,9 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe de funcoes para manipular imagem em CPU com OpenMP
+ */
 #ifndef PIOMP_H
 #define PIOMP_H
 #include <iostream>

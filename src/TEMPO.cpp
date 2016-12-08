@@ -1,3 +1,9 @@
+/*
+  Processamento de Imagens na GPU
+    Rafael Cardoso da Silva    21048012
+      Segmentacao de Imagem com o Algoritmo de Watershed
+        Classe de funcoes contagem de tempo
+ */
 #ifndef TEMPO_H
 #define TEMPO_H
 
