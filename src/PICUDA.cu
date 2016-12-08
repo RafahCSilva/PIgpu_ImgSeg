@@ -11,7 +11,9 @@ class PICUDA {
 public:
   PICUDA();
   virtual ~PICUDA();
-  static PBM1d* TD2D (PBM1d* img);
+  static void   TD2D_multGPU (PBM1d* img);
+  static PBM1d* TD2D_GLOBAL (PBM1d* img);
+  static PBM1d* TD2D_SHARED (PBM1d* img);
   static PBM1d* CORTE (PBM1d* img, int corte);
   static PBM1d* BINARIO (PBM1d* img);
   static PBM1d* LABEL (PBM1d* img);

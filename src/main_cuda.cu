@@ -68,18 +68,20 @@ int main(int argc, char const *argv[]) {
   if(verbose1)    cout << "OK\n";
   if(verbose2)    img1->print();
 
+
+  if(benchTD) {
+    PICUDA::TD2D_multGPU(img1);
+    return 0;
+  }
+
   if(verbose1)    cout << "\nTD\n";
   if(verbose1)    TEMPO_tic();
-  if(benchTD)     TEMPO_tic();
   if(bench)       TEMPO_tic();
-  PBM1d* img2 = PICUDA::TD2D(img1);
+  PBM1d* img2 = PICUDA::TD2D_SHARED(img1);
   if(bench)       tempo += TEMPO_toc_bench();
-  if(benchTD)     TEMPO_toc_TD();
-  if(benchTD)     return 0;
   if(verbose1)    TEMPO_toc();
   if(verbose2)    img2->print();
-
-  img2->saveAsP1_("TD2.pbm");
+  //img2->saveAsP1_("TD2.pbm");
 
   if(verbose1)    cout << "\nCORTE ( abaixo de ";
   int corte = ceil( img2->MAX() );
