@@ -3,7 +3,7 @@
 g++ src/main_gerador.cpp -o gerador.out -std=c++11
 g++ src/main_cpu.cpp -o cpu.out -std=c++11
 g++ src/main_omp.cpp -fopenmp -o omp.out -std=c++11
-nvcc main_cuda.cu -o cuda.out -std=c++11
+nvcc src/main_cuda.cu -o cuda.out -std=c++11
 
 
 ./gerador.out 2 imgs/moedas_2.pbm
@@ -71,7 +71,7 @@ echo OMP
 ./omp.out imgs/moedas_20.pbm imgs/moedas_20_saida_omp.pbm -bench
 
 echo.
-echo cuda
+echo CUDA
 ./cuda.out imgs/moedas_2.pbm imgs/moedas_2_saida_cuda.pbm -bench
 ./cuda.out imgs/moedas_3.pbm imgs/moedas_3_saida_cuda.pbm -bench
 ./cuda.out imgs/moedas_4.pbm imgs/moedas_4_saida_cuda.pbm -bench
