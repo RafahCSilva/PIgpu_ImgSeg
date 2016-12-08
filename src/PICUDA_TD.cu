@@ -41,7 +41,6 @@ void PICUDA::TD2D_multGPU(PBM1d* img) {
     TEMPO_tic();
     PBM1d* imgG = PICUDA::TD2D_GLOBAL(img);
     TEMPO_toc_TD();
-    cout << endl;
     delete imgG;
 
     // GPU shared memory
@@ -49,7 +48,6 @@ void PICUDA::TD2D_multGPU(PBM1d* img) {
     TEMPO_tic();
     PBM1d* imgS = PICUDA::TD2D_SHARED(img);
     TEMPO_toc_TD();
-    cout << endl;
     delete imgS;
   }
   cout << endl;

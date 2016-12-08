@@ -42,7 +42,7 @@ void TEMPO_toc_TD() {
   std::chrono::duration<double> elapsed_seconds = end-start;
   double t =  elapsed_seconds.count();
 
-  cout << t;
+  cout << t << endl;
 }
 
 double TEMPO_toc_bench() {
