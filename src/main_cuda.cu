@@ -18,7 +18,7 @@ using namespace std;
 int main(int argc, char const *argv[]) {
 
   if (argc < 3) {
-    std::cerr << "Usage: " << argv[0] << " <ORIGEM> <DESTINO> [-v, -vv, -bench]" << std::endl;
+    std::cerr << "Usage: " << argv[0] << " <ORIGEM> <DESTINO> [-v, -vv, -bench, -benchTD]" << std::endl;
     return 1;
   }
 
@@ -28,6 +28,7 @@ int main(int argc, char const *argv[]) {
   bool verbose1 = false;
   bool verbose2 = false;
   bool bench = false;
+  bool benchTD = false;
 
   if (argc == 4) {
     if( string(argv[3]) == "-v") {
@@ -40,9 +41,14 @@ int main(int argc, char const *argv[]) {
       verbose1 = false;
       verbose2 = false;
       bench = true;
+    } else if( string(argv[3]) == "-benchTD") {
+      verbose1 = false;
+      verbose2 = false;
+      bench = false;
+      benchTD = true;
     } else {
       cerr << "Terceito paramentro invalido!" << std::endl;
-      std::cerr << "Usage: " << argv[0] << " <ORIGEM> <DESTINO> [-v, -vv, -bench]" << std::endl;
+      std::cerr << "Usage: " << argv[0] << " <ORIGEM> <DESTINO> [-v, -vv, -bench, -benchTD]" << std::endl;
       exit(1);
     }
   }
@@ -64,9 +70,12 @@ int main(int argc, char const *argv[]) {
 
   if(verbose1)    cout << "\nTD\n";
   if(verbose1)    TEMPO_tic();
+  if(benchTD)     TEMPO_tic();
   if(bench)       TEMPO_tic();
   PBM1d* img2 = PICUDA::TD2D(img1);
   if(bench)       tempo += TEMPO_toc_bench();
+  if(benchTD)     TEMPO_toc_TD();
+  if(benchTD)     return 0;
   if(verbose1)    TEMPO_toc();
   if(verbose2)    img2->print();
 

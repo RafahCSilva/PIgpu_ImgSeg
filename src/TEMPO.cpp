@@ -28,6 +28,18 @@ void TEMPO_toc() {
   tictoc_stack.pop();
 }
 
+void TEMPO_toc_TD() {
+  std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+  start = tictoc_stack.top();
+  end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed_seconds = end-start;
+  double t =  elapsed_seconds.count();
+
+  cout << t
+       << endl;
+  tictoc_stack.pop();
+}
+
 double TEMPO_toc_bench() {
   std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
   start = tictoc_stack.top();
