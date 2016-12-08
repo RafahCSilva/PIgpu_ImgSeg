@@ -118,7 +118,7 @@ void PBM1d::saveAsP1_(const char * arquivo) {
 
 void PBM1d::loadAsP1(const char * arquivo) {
   int i;
-  char* p1;
+  char p1[10];
   FILE *arq = fopen(arquivo, "r");
 
   if(arq == NULL) {

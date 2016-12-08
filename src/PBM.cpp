@@ -86,7 +86,7 @@ void PBM::saveAsP1(const char * arquivo) {
 
 void PBM::loadAsP1(const char * arquivo) {
   int i, j;
-  char * p1;
+  char p1[10];
   FILE *arq = fopen(arquivo, "r");
 
   if(arq == NULL) {
