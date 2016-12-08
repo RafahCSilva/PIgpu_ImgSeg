@@ -28,7 +28,7 @@ nvcc src/main_cuda.cu -o cuda.out -std=c++11
 
 
 echo CPU
-./cpu.out.out imgs/moedas_2.pbm imgs/moedas_2_saida_cpu.pbm -benchTD
+./cpu.out imgs/moedas_2.pbm imgs/moedas_2_saida_cpu.pbm -benchTD
 ./cpu.out imgs/moedas_3.pbm imgs/moedas_3_saida_cpu.pbm -benchTD
 ./cpu.out imgs/moedas_4.pbm imgs/moedas_4_saida_cpu.pbm -benchTD
 ./cpu.out imgs/moedas_5.pbm imgs/moedas_5_saida_cpu.pbm -benchTD
@@ -48,7 +48,7 @@ echo CPU
 ./cpu.out imgs/moedas_19.pbm imgs/moedas_19_saida_cpu.pbm -benchTD
 ./cpu.out imgs/moedas_20.pbm imgs/moedas_20_saida_cpu.pbm -benchTD
 
-echo.
+echo
 echo OMP
 ./omp.out imgs/moedas_2.pbm imgs/moedas_2_saida_omp.pbm -benchTD
 ./omp.out imgs/moedas_3.pbm imgs/moedas_3_saida_omp.pbm -benchTD
@@ -70,7 +70,7 @@ echo OMP
 ./omp.out imgs/moedas_19.pbm imgs/moedas_19_saida_omp.pbm -benchTD
 ./omp.out imgs/moedas_20.pbm imgs/moedas_20_saida_omp.pbm -benchTD
 
-echo.
+echo
 echo CUDA
 ./cuda.out imgs/moedas_2.pbm imgs/moedas_2_saida_cuda.pbm -benchTD
 ./cuda.out imgs/moedas_3.pbm imgs/moedas_3_saida_cuda.pbm -benchTD
